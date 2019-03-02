@@ -26,13 +26,13 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    {% if current_writer.is_authenticated %}
+                    {% if current_user.is_authenticated %}
                     <li><a href="{{url_for('main.new_blog')}}">New Blog</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{current_writer.username| capitalize}} <span class="caret"></span></a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{current_user.username| capitalize}} <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="{{url_for('main.profile',uname=current_writer.username)}}">Profile</a></li>
+                        <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="{{url_for('main.writer_blogs',uname=current_writer.username)}}">My Blogs</a></li>
+                        <li><a href="{{url_for('main.writer_blogs',uname=current_user.username)}}">My Blogs</a></li>
                     </ul>
                     </li>
                     <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
