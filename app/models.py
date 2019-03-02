@@ -63,7 +63,7 @@ class Blog(db.Model):
     @classmethod
     def count_blog(cls,uname):
         writer = Writer.query.filter_by(username = uname).first()
-        blogs = Blog.query.filter_by(user_id = user.id).all()
+        blogs = Blog.query.filter_by(writer_id = writer.id).all()
 
         blog_count = 0
         for blog in blogs:
