@@ -3,7 +3,7 @@ from . import main
 from ..models import Writer,Blog,Comment
 from .. import db,photos
 from .forms import UpdateProfile,BlogForm,CommentForm
-from flask_login import login_required,current_writer
+from flask_login import login_required,current_user
 import datetime
 
 
@@ -39,7 +39,7 @@ def motivation():
 
 
 @main.route('/blogs/success')
-def happiness():
+def success():
     blogs = Blog.get_blogs('success')
 
     return render_template('success.html',blogs = blogs)

@@ -5,9 +5,9 @@ from . import login_manager
 from datetime import datetime
 
 
-@login_manager.writer_loader
-def load_writer(writer_id):
-    return Writer.query.get(int(writer_id))
+@login_manager.user_loader
+def load_writer(user_id):
+    return Writer.query.get(int(user_id))
 
 class Writer(UserMixin,db.Model):
     __tablename__ = 'writers'

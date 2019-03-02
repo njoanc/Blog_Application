@@ -1,5 +1,5 @@
 from flask import render_template,redirect,url_for, flash,request
-from flask_login import login_writer,logout_writer,login_required
+from flask_login import login_user,logout_user,login_required
 from . import auth
 from ..models import Writer
 from .forms import LoginForm,RegistrationForm
@@ -13,7 +13,7 @@ def login():
     if form.validate_on_submit():
         writer = Writer.query.filter_by(email = form.email.data).first()
         if writer is not None and writer.verify_password(form.password.data):
-            login_writer(writer,form.remember.data)
+            login_user(writer,form.remember.data)
             return redirect(request.args.get('next') or url_for('main.index'))
 
         flash('Invalid username or password')
@@ -24,7 +24,7 @@ def login():
 
 @auth.route('/logout')
 def logout():
-    logout_writer()
+    logout_user()
     return redirect(url_for('main.index'))
 
 
