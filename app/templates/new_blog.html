@@ -89,13 +89,18 @@
   }
 </style>
 
-<div class="container-fluid">
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
 
-    <div class="container">
-  
-      {{wtf.quick_form(pitch_form)}}
-  
-    </div>
-  </div>
+{% block content %}
+    
+<div class="container">
+        <div class="col-md-12">
+            <h3>Create a blog</h3>
+            <hr>
+            {{ wtf.quick_form(blog_form) }}
+        </div>
+
+</div>
 
 {% endblock %}

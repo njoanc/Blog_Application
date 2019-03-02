@@ -3,7 +3,7 @@ from . import main
 from ..models import Writer,Blog,Comment
 from .. import db,photos
 from .forms import UpdateProfile,BlogForm,CommentForm
-from flask_login import login_required,current_user
+from flask_login import login_required,current_writer
 import datetime
 
 
@@ -122,7 +122,7 @@ def blog(id):
     
 @main.route('/writer/<uname>/blogs', methods = ['GET','POST'])
 def writer_blog(uname):
-    writer = WRiter.query.filter_by(username = uname).first()
+    writer = Writer.query.filter_by(username = uname).first()
     blogs = blog.query.filter_by(writer_id = writer.id).all()
     blog_count = Blog.count_blogs(uname)
 
