@@ -24,7 +24,7 @@ Go to https://github.com/njoanc/Blog-API.git OR
 
 
 link to it on Heroku
-https://blog10.herokuapp.com/
+https://waret.herokuapp.com/
 
 # Known Bugs
 This app may not meet all the desired services as the user need but, It is still in Development and that will be soon resolved.
