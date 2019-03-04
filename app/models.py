@@ -14,7 +14,7 @@ class User(UserMixin,db.Model):
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(20), index = True)
     email = db.Column(db.String(255),unique = True, index = True)
-    bio = db.Column(db.String(1000))
+    bio = db.Column(db.String(500))
     profile_pic_path = db.Column(db.String)
     password_secure = db.Column(db.String(255))
     blogs = db.relationship('Blog',backref = 'user', lazy = 'dynamic')
@@ -38,7 +38,7 @@ class Blog(db.Model):
     __tablename__ = 'blogs'
     id = db.Column(db.Integer,primary_key = True)
     blog_title = db.Column(db.String)
-    blog_content = db.Column(db.String(1000))
+    blog_content = db.Column(db.String(500))
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     likes = db.Column(db.Integer)
