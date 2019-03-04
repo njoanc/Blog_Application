@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+<!-- Content block -->
+<img src="https://bit.ly/2tJBM2u" alt="Pitch">
+{%block content%}
+ <div class="jumbotron text-center" style="background-color:rgb(161, 235, 64); color: black; margin: 10px -100px 30px -100px;">
+    <h1 class="text-center" style="border-bottom: 1px solid #372e5f; padding-bottom: 5px;">Blog Application</h1>
+    {{macro.displayBlogs(blogs)}}
+</div>
+<div class="col-md-12">
+    <div class="container">
+      <div class="jumbotron">
+        <p>{{ quote.quote }}</p>
+        <h2>{{ quote.author }}</h2>
+        <h3>{{ quote.id }}</h3>
+      </div>
+    </div>
+</div>
+
+{%endblock%}
