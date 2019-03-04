@@ -2,8 +2,36 @@
 {% import 'macros.html' as macro %}
 
 <!-- Content block -->
-<img src="https://bit.ly/2tJBM2u" alt="Pitch">
+
 {%block content%}
+<style>
+  img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+</style>
+<img src="https://bit.ly/2tJBM2u" alt="Pitch">
  <div class="jumbotron text-center" style="background-color:rgb(161, 235, 64); color: black; margin: 10px -100px 30px -100px;">
     <h1 class="text-center" style="border-bottom: 1px solid #372e5f; padding-bottom: 5px;">Blog Application</h1>
     {{macro.displayBlogs(blogs)}}
