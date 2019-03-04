@@ -9,7 +9,7 @@ This Blogging App will help: the blogs writer to sign in to the blog,to create a
 
 2. Install Python3.6 and its third party flask modules
 
-3. Write 'git clone https://github.com/njoanc/Blog-API.gitt' or
+3. Write 'git clone https://github.com/njoanc/Blog_Application.git' or
 
 4. Go to https://github.com
 
@@ -17,9 +17,9 @@ This Blogging App will help: the blogs writer to sign in to the blog,to create a
 
 * Go to njoanc repositories
 
-* Get the repository called Blog-API OR
+* Get the repository called Blog_Application or
 
-Go to https://github.com/njoanc/Blog-API.git OR
+Go to https://github.com/njoanc/Blog_Application.git or
 
 
 link to it on Heroku
